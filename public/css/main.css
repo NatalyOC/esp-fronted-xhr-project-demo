@@ -1,0 +1,17 @@
+.bgc{
+    background: linear-gradient(20deg,rgb(71, 89, 109)10%,#6F8690,#BCC0C0 80%);
+}
+#main{
+    padding: 70px 0;
+}
+ul{
+    list-style: none;
+}
+li{
+ padding: 5px 0;
+ text-decoration: none;
+
+}
+.w100{
+    width: 100% important!;
+}
