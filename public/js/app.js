@@ -28,28 +28,21 @@ function addNews() {
   const data = JSON.parse(this.responseText);
   // console.log(data);
   const response = data.response;
-  // console.log(response); 
+  console.log(response); 
   const docs = data.response.docs;
   // console.log(docs,docs.length);
-  let li = '';
-  let article = '';
-  let title = '';
-  let snippet = '';
   docs.forEach(function(element) {
-    article = element;
+    let article = element;
     // console.log(article)
     let image = 'http://graphics8.nytimes.com/' + article.multimedia[0].url;
     // console.log(image);
-    title = article.headline.main;
+    let title = article.headline.main;
     // console.log(title);
-    snippet = article.snippet;
+    let snippet = article.snippet;
     // console.log(snippet);
-  
-    li = document.createElement('li');
-    li.className = 'articleClass';
-      
-    li.innerHTML = `<div class="card"><img src="${image}" class="card-img-top"><div class="card-body"><p class="card-text">${snippet}</p></div></div>`;
-      
+    let url = article.web_url;
+    let li = document.createElement('li');
+    li.innerHTML = `<div class="card"><img src="${image}" class="card-img-top"><div class="card-body"><p class="card-text">${snippet}</p><a href="${url}" class="card-link">Leer más</a></div></div>`;
     responseContainer.appendChild(li);
   });
 }
